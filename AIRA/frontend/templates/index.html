@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRA — Autonomous Intelligent Reasoning Assistant</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>AIRA</h1>
+                <div class="subtitle">Autonomous Intelligent Reasoning Assistant</div>
+            </div>
+
+            <div class="sidebar-section">
+                <button class="btn-new-chat" id="btnNewChat">
+                    <span>+</span> New Chat
+                </button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Conversations</h3>
+            </div>
+            <div class="conversation-list" id="conversationList"></div>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <div class="status-dot loading" id="statusDot"></div>
+                    <span id="statusLabel">Initializing...</span>
+                </div>
+                <div style="margin-top: 8px;">
+                    <button class="btn-dashboard" id="btnDashboard">Dashboard</button>
+                    <button class="btn-dashboard" id="btnPCAgent" style="margin-left:4px;">PC Agent</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <h2 id="chatTitle">AIRA Conversation</h2>
+                <div class="header-stats">
+                    <span>🧠 Memory: <strong id="statConversations">0</strong></span>
+                    <span>📚 Knowledge: <strong id="statKnowledge">0</strong></span>
+                </div>
+            </div>
+
+            <!-- Welcome State -->
+            <div class="empty-state" id="welcomeState">
+                <div class="logo">AIRA</div>
+                <p>Autonomous Intelligent Reasoning Assistant</p>
+                <p style="font-size: 0.75rem;">Start a conversation or explore the features below.</p>
+                <div class="welcome-features">
+                    <div class="feature-card">
+                        <div class="icon">💬</div>
+                        <h4>Natural Chat</h4>
+                        <p>Talk naturally with AIRA</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🧠</div>
+                        <h4>Memory</h4>
+                        <p>Remembers past conversations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📚</div>
+                        <h4>Knowledge</h4>
+                        <p>Learns from solutions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔧</div>
+                        <h4>Tools</h4>
+                        <p>Files, Git, Terminal, and more</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages" style="display: none;"></div>
+
+            <!-- Input Area -->
+            <div class="chat-input-area">
+                <form id="chatForm" class="input-wrapper">
+                    <textarea
+                        id="chatInput"
+                        class="chat-input"
+                        placeholder="Type a message to AIRA..."
+                        rows="1"
+                    ></textarea>
+                    <button type="submit" class="btn-send" id="btnSend">Send</button>
+                    <button type="button" class="btn-stop" id="btnStop" style="display:none;">Stop</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard Panel -->
+        <div class="dashboard-panel" id="dashboardPanel">
+            <div class="dash-card">
+                <h4>System Status</h4>
+                <div class="dash-stat"><span class="label">AI Provider</span><span class="value" id="statProvider">-</span></div>
+                <div class="dash-stat"><span class="label">Model</span><span class="value" id="statModel">-</span></div>
+            </div>
+            <div class="dash-card">
+                <h4>Memory</h4>
+                <div class="dash-stat"><span class="label">Conversations</span><span class="value" id="statConversations">0</span></div>
+                <div class="dash-stat"><span class="label">Messages</span><span class="value" id="statMessages">0</span></div>
+            </div>
+            <div class="dash-card">
+                <h4>Knowledge</h4>
+                <div class="dash-stat"><span class="label">Entries</span><span class="value" id="statKnowledge">0</span></div>
+                <div class="dash-stat"><span class="label">Verified</span><span class="value" id="statVerified">0</span></div>
+            </div>
+            <div class="dash-card">
+                <h4>System</h4>
+                <div class="dash-stat"><span class="label">Unresolved Errors</span><span class="value" id="statErrors">0</span></div>
+                <div class="dash-stat"><span class="label">Skills</span><span class="value" id="statSkills">0</span></div>
+            </div>
+            <div class="dash-card">
+                <h4>Recent Activity</h4>
+                <div id="activityList">
+                    <div class="activity-item">
+                        <span class="activity-time">--:--</span>
+                        <span class="activity-text">System started</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PC Agent Panel -->
+        <div class="pc-agent-panel" id="pcAgentPanel">
+            <div class="pc-header">
+                <h3>PC AGENT</h3>
+                <div class="pc-status" id="pcStatus">
+                    <div class="status-dot loading" id="pcStatusDot"></div>
+                    <span id="pcStatusLabel">Checking...</span>
+                </div>
+            </div>
+            <div class="pc-card">
+                <h4>System</h4>
+                <div class="pc-stat"><span class="label">Platform</span><span class="value" id="pcPlatform">-</span></div>
+                <div class="pc-stat"><span class="label">Permission Mode</span><span class="value" id="pcMode">-</span></div>
+            </div>
+            <div class="pc-card">
+                <h4>Tools</h4>
+                <div id="pcToolsList" class="pc-tools-list"></div>
+            </div>
+            <div class="pc-card">
+                <h4>Quick Actions</h4>
+                <div class="pc-actions">
+                    <button class="pc-action-btn" onclick="AIRA.pcExecute('system.info',{})">System Info</button>
+                    <button class="pc-action-btn" onclick="AIRA.pcExecute('git.status',{cwd:'D:/project'})">Git Status</button>
+                    <button class="pc-action-btn" onclick="AIRA.pcExecute('application.list_running',{})">Running Apps</button>
+                    <button class="pc-action-btn" onclick="AIRA.pcExecute('network.info',{})">Network</button>
+                </div>
+            </div>
+            <div class="pc-card">
+                <h4>Pending Approvals</h4>
+                <div id="pcApprovalsList"><div class="activity-item"><span class="activity-text">None</span></div></div>
+            </div>
+            <div class="pc-card">
+                <h4>Activity Log</h4>
+                <div id="pcActivityLog"></div>
+            </div>
+            <div class="pc-actions" style="margin-top:12px;">
+                <button class="pc-action-btn" onclick="AIRA.refreshPCPanel()">Refresh</button>
+                <select id="pcModeSelect" onchange="AIRA.setPCMode(this.value)" class="pc-mode-select">
+                    <option value="manual">Manual</option>
+                    <option value="safe" selected>Safe</option>
+                    <option value="semi_auto">Semi-Auto</option>
+                    <option value="auto">Auto</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

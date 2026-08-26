@@ -1,0 +1,33 @@
+# AIRA Configuration
+# Copy this to config_local.yaml and customize
+# Never commit API keys or secrets
+
+aira:
+  name: "AIRA"
+  version: "1.0.0"
+
+ai:
+  provider: "openai"
+  model: "gpt-4o-mini"
+  temperature: 0.7
+  max_tokens: 2048
+  # Set AIRA_AI_API_KEY environment variable
+
+memory:
+  enabled: true
+
+github:
+  intelligence_repo: "https://github.com/mikkkoyy/AutoFixAI-Intelligence.git"
+  auto_sync: false
+
+autonomy:
+  enabled: true
+  code_changes: "APPROVAL_REQUIRED"
+  dangerous_commands: "BLOCKED"
+
+logging:
+  level: "INFO"
+
+security:
+  protect_system_files: true
+  require_confirmation_destructive: true

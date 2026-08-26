@@ -1,0 +1,110 @@
+aira:
+  name: "AIRA"
+  full_name: "Autonomous Intelligent Reasoning Assistant"
+  version: "1.0.0"
+
+ai:
+  provider: "openai"
+  model: "gpt-4o-mini"
+  temperature: 0.7
+  max_tokens: 2048
+  api_key_env: "AIRA_AI_API_KEY"
+
+memory:
+  enabled: true
+  database: "memory/aira_memory.db"
+  short_term_limit: 50
+  long_term_threshold: 0.6
+  auto_summarize: true
+
+github:
+  intelligence_repo: "https://github.com/mikkkoyy/AutoFixAI-Intelligence.git"
+  auto_sync: false
+  sync_on_startup: false
+
+autonomy:
+  enabled: true
+  code_changes: "APPROVAL_REQUIRED"
+  dangerous_commands: "BLOCKED"
+  knowledge_creation: "AUTO"
+  intelligence_sync: "SAFE"
+
+logging:
+  level: "INFO"
+  directory: "logs"
+  max_size_mb: 10
+
+security:
+  protect_system_files: true
+  require_confirmation_destructive: true
+  blocked_commands:
+    - "rm -rf /"
+    - "format"
+    - "del /s /q"
+    - "rmdir /s /q"
+  api_key_rotation_days: 90
+
+pc_agent:
+  enabled: true
+  host: "127.0.0.1"
+  port: 8765
+  security:
+    require_authentication: true
+  permissions:
+    mode: "safe"
+    read: true
+    write: true
+    execute: false
+    destructive: false
+  command_timeout: 30
+  filesystem:
+    allowed_paths:
+      - "D:/FILES/project/aira ai"
+  applications:
+    allowed:
+      - "code.exe"
+      - "notepad.exe"
+      - "explorer.exe"
+      - "cmd.exe"
+      - "powershell.exe"
+      - "python.exe"
+      - "git.exe"
+      - "node.exe"
+      - "npm.exe"
+
+tools:
+  filesystem:
+    enabled: true
+    permission: "READ"
+  terminal:
+    enabled: true
+    permission: "READ"
+  git:
+    enabled: true
+    permission: "WRITE"
+  memory:
+    enabled: true
+    permission: "WRITE"
+
+agents:
+  core: true
+  conversation: true
+  memory: true
+  knowledge: true
+  coding: true
+  debugging: true
+  research: true
+  git: true
+  testing: true
+  improvement: true
+  safety: true
+
+skills:
+  directory: "skills"
+  auto_discover: true
+
+improvement:
+  enabled: true
+  max_improvements_per_day: 10
+  require_approval: true
+  confidence_threshold: 0.7

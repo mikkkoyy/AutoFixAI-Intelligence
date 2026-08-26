@@ -1,0 +1,65 @@
+# AIRA .gitignore
+
+# Secrets and credentials
+.env
+.env.*
+*.key
+*.pem
+secrets.yaml
+secrets.json
+config/secrets*
+.pc_agent/
+
+# Database files (local only)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Logs
+logs/*.log
+logs/*.log.*
+
+# Memory content (private)
+memory/conversations/*
+memory/long_term/*
+memory/learned/*
+memory/errors/*
+memory/improvements/*
+!memory/conversations/.gitkeep
+!memory/long_term/.gitkeep
+!memory/knowledge/.gitkeep
+!memory/learned/.gitkeep
+!memory/errors/.gitkeep
+!memory/improvements/.gitkeep
+!memory/indexes/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Node
+node_modules/
+package-lock.json
+
+# AIRA runtime logs
+AIRA/logs/*.log
