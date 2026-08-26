@@ -1,0 +1,12 @@
+{
+  "query": "root cause tracing plan",
+  "cached_at": "2026-08-26T07:39:34.552852+00:00",
+  "entries": [
+    {
+      "path": "ai-knowledge/reasoning/root-cause-tracing.md",
+      "category": "reasoning",
+      "title": "root-cause-tracing",
+      "body": "title: root-cause-tracing\nbody text"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local runtime data
+.autofix/memory/
+.autofix/tasks/
+.autofix/runtime/
+.autofix/logs/
+
+# Build artifacts
+build/
+dist/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local AI/agent history
+.aider.chat.history.md
+.aider.input.history
+
+# Logs
+logs/
+*.log
+
+# Temporary verification output
+stderr_capture.txt
+verify_stderr.txt
+test.txt
+
+# Nested AutoFix runtime data
+workspace/**/.autofix/memory/
+workspace/**/.autofix/tasks/
+
+# Local installers / binaries
+*.exe
+*.dll
+
+# AutoFix runtime/test workspaces
+workspace/

@@ -1,0 +1,136 @@
+QMainWindow {
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+QWidget {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: "Segoe UI";
+    font-size: 10pt;
+}
+
+QListWidget {
+    background: #181818;
+    border: none;
+    border-right: 1px solid #2d2d2d;
+    outline: none;
+    padding: 10px 6px;
+}
+
+QListWidget::item {
+    color: #a9a9a9;
+    padding: 12px 14px;
+    margin: 2px 4px;
+    border-radius: 6px;
+}
+
+QListWidget::item:hover {
+    background: #252526;
+    color: #ffffff;
+}
+
+QListWidget::item:selected {
+    background: #094771;
+    color: #ffffff;
+}
+
+QLabel#title {
+    color: #ffffff;
+    font-size: 22pt;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+QLabel {
+    color: #d4d4d4;
+}
+
+QLineEdit,
+QPlainTextEdit,
+QSpinBox,
+QComboBox {
+    background: #252526;
+    color: #d4d4d4;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+    padding: 7px;
+    selection-background-color: #264f78;
+}
+
+QLineEdit:focus,
+QPlainTextEdit:focus,
+QSpinBox:focus,
+QComboBox:focus {
+    border: 1px solid #007acc;
+}
+
+QComboBox {
+    min-height: 28px;
+}
+
+QComboBox QAbstractItemView {
+    background: #252526;
+    color: #d4d4d4;
+    border: 1px solid #3c3c3c;
+    selection-background-color: #094771;
+    selection-color: #ffffff;
+}
+
+QPushButton {
+    background: #0e639c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 16px;
+    min-height: 30px;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    background: #1177bb;
+}
+
+QPushButton:pressed {
+    background: #075985;
+}
+
+QPushButton:disabled {
+    background: #333333;
+    color: #777777;
+}
+
+QScrollBar:vertical {
+    background: #1e1e1e;
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background: #424242;
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #5a5a5a;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QToolTip {
+    background: #252526;
+    color: #ffffff;
+    border: 1px solid #454545;
+    padding: 5px;
+}
+
+QMessageBox {
+    background: #252526;
+}
+
+QMessageBox QLabel {
+    color: #d4d4d4;
+}

@@ -1,0 +1,110 @@
+=== 1. STARTUP ===
+  1.1 title: PASS
+  1.2 visible: PASS
+  1.3 size: PASS
+  1.4 sessions_start: PASS
+  1.5 active_id_start: PASS
+  1.6 editor_tabs_start: PASS
+=== 2. MENUS ===
+  2.1 count_8: PASS
+  2.2 names: PASS
+=== 3. STATUS BAR ===
+  3.1 backend: PASS
+  3.2 opencode: PASS
+=== 4. ACTIVITY BAR ===
+  4.1 count_8: PASS
+=== 5. EXPLORER ===
+  5.1 roots: PASS
+  5.2 name: PASS
+  5.3 children: PASS
+  5.4 path: PASS
+=== 6. SHORTCUTS ===
+  6.1 all: PASS
+=== 7. TERMINAL MENU ===
+  7.1 count_9: PASS
+=== 8. OPENCODE ===
+  8.1 discovery: PASS
+  8.2 workspace: PASS
+  8.3 has_navigator: PASS
+  8.4 has_nav_list: PASS
+=== 9. NAVIGATOR ===
+  9.1 nav_width: PASS
+  9.2 stack_exists: PASS
+=== 10. CTRL+` AUTO CREATE ===
+  10.1 one_session: PASS
+  10.2 name: PASS
+  10.3 label: PASS
+  10.4 cwd: PASS
+  10.5 running: PASS
+  10.6 not_opencode: PASS
+=== 11. PER-SESSION OUTPUT ===
+  11.1 stack_has_widget: PASS
+  11.2 current_is_session: PASS
+  11.3 path_visible: PASS
+  11.4 has_pwsch: PASS
+  11.5 no_editor_tab: PASS
+=== 12. DEDUP ===
+  12.1 still_one: PASS
+=== 13. NAVIGATOR SESSIONS ===
+  13.1 one_nav_row: PASS
+=== 14. NEW PS ===
+  14.1 two: PASS
+  14.2 stack_count: PASS
+  14.3 ps_label: PASS
+=== 15. NEW CMD ===
+  15.1 three: PASS
+  15.2 cmd_exists: PASS
+  15.3 label: PASS
+  15.4 cwd: PASS
+  15.5 running: PASS
+=== 16. SWITCHING ===
+  16.1 first: PASS
+  16.2 output_widget: PASS
+  16.3 third: PASS
+  16.4 output_widget_cmd: PASS
+=== 17. CLS PS ===
+  17.1 ps_prompt: PASS
+  17.2 ps_path: PASS
+=== 18. CLS CMD ===
+  18.1 cmd_path: PASS
+  18.2 no_ps: PASS
+=== 19. CLEAR DISPLAY ===
+  19.1 prompt: PASS
+=== 20. MAX/RESTORE ===
+  20.1 max: PASS
+  20.2 restore: PASS
+=== 21. TOGGLE ===
+  21.1 on: PASS
+  21.2 off: PASS
+=== 22. OPEN/CLOSE FILE ===
+  22.1 tabs: PASS
+  22.2 name: PASS
+  22.3 lang: PASS
+  22.4 closed: PASS
+=== 23. SCROLL ===
+  23.1 top: PASS
+  23.2 bot: PASS
+=== 24. ACTIVITY ===
+  24.1 search: PASS
+  24.2 explorer: PASS
+=== 25. NEW FROM MENU ===
+  25.1 created: PASS
+=== 26. SPLIT ===
+  26.1 split: PASS
+=== 27. OPENCODE INTEGRITY ===
+  27.1 created: PASS
+  27.2 label: PASS
+  27.3 cwd: PASS
+  27.4 running: PASS
+=== 28. PER-SESSION CLOSE ===
+  28.1 killed: PASS
+  28.2 no_leak: PASS
+=== 29. CLEANUP ===
+  29.1 all_cleaned: PASS
+  29.2 stack_empty: PASS
+=== 30. RIGHT CLICK PASTE ===
+  30.1 TerminalInput: PASS
+=== 31. OPENCDOE SIDEBAR ===
+  31.1 start_btn: PASS
+
+=== TOTAL: 77 PASS / 0 FAIL ===

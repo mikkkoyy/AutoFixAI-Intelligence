@@ -1,0 +1,6 @@
+PS state immediately: ProcessState.Running (0=NotRunning,1=Starting,2=Running)
+PS process PID: 4888
+PS state after events: ProcessState.Running
+PS process PID after: 4888
+CMD state: ProcessState.Running
+CMD PID: 400

@@ -1,0 +1,24 @@
+AutoFix AI Studio Backend - Verification Report
+Date: 2026-08-15
+
+Implemented fixes:
+1. TestRunner now clears Python __pycache__ and .pyc files before each isolated run.
+2. TestRunner sets PYTHONDONTWRITEBYTECODE=1 to prevent stale bytecode during an AutoFix cycle.
+3. DiagnosticService now prioritizes syntax/import/timeout errors and correctly recognizes pytest assertion output such as "E assert -1 == 5".
+4. Added regression tests for stale Python bytecode and diagnostic classification.
+
+Verification performed in this environment:
+- Python syntax compilation: 25 Python files passed.
+- diagnostics tests: 3 passed.
+- health tests: 2 passed.
+- security tests: 3 passed.
+- runner stale-bytecode regression: 1 passed.
+- Direct PipelineService end-to-end verification: VERIFIED, 1 fix attempt, test_passed=True, checkpoint=True.
+- Pipeline event sequence reached plan -> scan -> generate -> test -> diagnose -> fix -> retest -> test -> verify -> checkpoint.
+
+Environment limitation:
+The full original pytest suite could not complete here because this execution environment injects an unrelated artifact-tool Python startup hook into subprocesses. The nested pytest-based pipeline tests time out for that external reason. This hook is not part of the uploaded AutoFix backend.
+
+Recommended PC verification:
+python -m pytest -q
+Then restart Uvicorn and run the API demo job.

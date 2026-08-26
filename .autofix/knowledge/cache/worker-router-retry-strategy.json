@@ -1,0 +1,12 @@
+{
+  "query": "worker router retry strategy",
+  "cached_at": "2026-08-26T07:39:34.545855+00:00",
+  "entries": [
+    {
+      "path": "ai-knowledge/lessons/worker-router-retry.md",
+      "category": "lessons",
+      "title": "worker-router-retry",
+      "body": "title: worker-router-retry\nbody text"
+    }
+  ]
+}
