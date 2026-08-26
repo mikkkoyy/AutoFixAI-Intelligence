@@ -97,6 +97,7 @@ _INTENT_LAYER_MAP: dict[str, tuple[str, ...]] = {
     "change_request": ("coding", "planning", "verification", "recovery"),
     "plan_request": ("planning", "reasoning", "decision"),
     "proposal_request": ("planning", "coding", "verification"),
+    "recovery": ("recovery", "reasoning"),
 }
 
 
