@@ -255,7 +255,7 @@ def call_provider(config: ProviderConfig, message: str, history=None) -> str:
     return _call_openai_compatible(config, message, history)
 
 
-def _post_json(url, payload, headers):
+def _post_json(url, payload, headers, provider_name="provider"):
     request = urllib.request.Request(
         url,
         data=json.dumps(payload).encode("utf-8"),
@@ -271,9 +271,9 @@ def _post_json(url, payload, headers):
             detail = exc.read().decode("utf-8", errors="replace")[:300]
         except Exception:
             pass
-        raise ChatProviderError(f"{config.name} HTTP {exc.code}: {detail}") from exc
+        raise ChatProviderError(f"{provider_name} HTTP {exc.code}: {detail}") from exc
     except (urllib.error.URLError, OSError, TimeoutError) as exc:
-        raise ChatProviderError(f"{config.name} connection failed: {exc}") from exc
+        raise ChatProviderError(f"{provider_name} connection failed: {exc}") from exc
 
 
 def _system_prompt(config: ProviderConfig) -> str:
@@ -326,6 +326,7 @@ def _call_openai_compatible(config, message, history):
         config.base_url.rstrip("/") + "/chat/completions",
         {"model": config.model, "messages": messages},
         {"Authorization": f"Bearer {config.api_key}"},
+        provider_name=config.name,
     )
     try:
         return str(data["choices"][0]["message"]["content"]).strip()
@@ -342,6 +343,7 @@ def _call_anthropic(config, message, history):
         config.base_url,
         {"model": config.model, "max_tokens": 2048, "system": system, "messages": messages},
         {"x-api-key": config.api_key, "anthropic-version": "2023-06-01"},
+        provider_name=config.name,
     )
     try:
         return str(data["content"][0]["text"]).strip()
