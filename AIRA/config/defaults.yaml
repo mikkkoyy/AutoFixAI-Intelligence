@@ -9,6 +9,13 @@ ai:
   temperature: 0.7
   max_tokens: 2048
   api_key_env: "AIRA_AI_API_KEY"
+  ollama:
+    host: "http://127.0.0.1:11434"
+    timeout: 120
+  deepseek:
+    base_url: "https://api.deepseek.com"
+    model: "deepseek-v4-flash"
+    timeout: 120
 
 memory:
   enabled: true
@@ -46,8 +53,13 @@ security:
 
 pc_agent:
   enabled: true
+  # "remote" = talk to the standalone PC Agent server over localhost HTTP
+  # "embedded" = run PC tools in-process inside the AIRA application
+  connection: "remote"
   host: "127.0.0.1"
   port: 8765
+  connection_timeout: 5
+  token: ""
   security:
     require_authentication: true
   permissions:
@@ -108,3 +120,11 @@ improvement:
   max_improvements_per_day: 10
   require_approval: true
   confidence_threshold: 0.7
+
+autofix:
+  enabled: true
+  mode: "suggest"
+  max_attempts: 2
+  allowed_paths:
+    - "AIRA/"
+    - "tests/"

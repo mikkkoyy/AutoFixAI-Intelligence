@@ -34,6 +34,11 @@ class Config:
             "ai.provider": os.getenv("AIRA_AI_PROVIDER"),
             "ai.model": os.getenv("AIRA_AI_MODEL"),
             "ai.api_key_env": os.getenv("AIRA_AI_API_KEY_ENV"),
+            "ai.ollama.host": os.getenv("AIRA_OLLAMA_HOST"),
+            "ai.ollama.model": os.getenv("AIRA_OLLAMA_MODEL"),
+            "ai.deepseek.base_url": os.getenv("AIRA_DEEPSEEK_BASE_URL"),
+            "ai.deepseek.model": os.getenv("AIRA_DEEPSEEK_MODEL"),
+            "ai.deepseek.timeout": os.getenv("AIRA_DEEPSEEK_TIMEOUT"),
         }
         for key, val in env_overrides.items():
             if val is not None:

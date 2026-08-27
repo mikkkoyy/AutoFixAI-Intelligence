@@ -12,6 +12,15 @@ ai:
   temperature: 0.7
   max_tokens: 2048
   # Set AIRA_AI_API_KEY environment variable
+  # Local AI options, used when provider is "ollama"
+  # host: "http://127.0.0.1:11434"
+  # model: "llama3.1"
+  # timeout: 120
+  # DeepSeek options, used when provider is "deepseek"
+  # Set DEEPSEEK_API_KEY environment variable
+  # base_url: "https://api.deepseek.com"
+  # model: "deepseek-v4-flash"
+  # timeout: 120
 
 memory:
   enabled: true

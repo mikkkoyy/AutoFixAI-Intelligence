@@ -30,3 +30,7 @@ def get_ai_api_key() -> str:
         key = get_secret("OPENAI_API_KEY")
 
     return key
+
+
+def get_deepseek_api_key() -> str:
+    return get_secret("DEEPSEEK_API_KEY")
